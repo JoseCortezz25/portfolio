@@ -1,0 +1,41 @@
+---
+import { ArrowRight } from "lucide-react";
+import MePhoto from "../molecules/me-photo.astro";
+---
+
+{/* Hero Section */}
+<section class="pt-32 pb-20 px-6 min-h-[calc(100vh-10rem)] flex items-center">
+  <div class="container mx-auto max-w-4xl">
+    <div class="space-y-6">
+      <MePhoto />
+      <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] text-balance">
+        Alfonso Chavarro 👋
+      </h1>
+      <h2 class="text-3xl font-bold mb-4">Frontend Developer</h2>
+
+      <p
+        class="text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl"
+      >
+        Desarrollador Frontend apasionado por crear experiencias de usuario
+        atractivas y funcionales. Con experiencia en el desarrollo de
+        aplicaciones web empleando tecnologías web.
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-4">
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+        >
+          View my work
+          <ArrowRight class="w-4 h-4" />
+        </a>
+        <a
+          href="mailto:your.email@example.com"
+          class="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-accent hover:text-accent transition-colors font-medium"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
