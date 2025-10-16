@@ -28,7 +28,7 @@ export function ProjectCard({ slug, title, description, image, techStack, status
 
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-3">
-          <h3 className="text-xl font-semibold group-hover:text-accent transition-colors">{title}</h3>
+          <h3 className="text-xl font-semibold transition-colors">{title}</h3>
           {status && <Badge variant="accent">{status}</Badge>}
         </div>
 

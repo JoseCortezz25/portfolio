@@ -300,3 +300,65 @@
   border-bottom: 2px solid;
   border-left: 2px solid;
 }
+
+.primary-button {
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors font-medium;
+}
+
+.outline-button {
+  @apply inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full hover:bg-accent/60 transition-colors font-medium;
+}
+
+/* Layered text effect like Sandbox - multiple outline layers */
+.layered-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  text-shadow: 0 1px 0 hsl(var(--border) / 0.15),
+    0 2px 0 hsl(var(--border) / 0.15), 0 3px 0 hsl(var(--border) / 0.15),
+    0 4px 0 hsl(var(--border) / 0.15), 0 5px 0 hsl(var(--border) / 0.15),
+    0 6px 0 hsl(var(--border) / 0.15), 0 7px 0 hsl(var(--border) / 0.15),
+    0 8px 0 hsl(var(--border) / 0.15), 0 9px 0 hsl(var(--border) / 0.15),
+    0 10px 0 hsl(var(--border) / 0.15), 0 11px 0 hsl(var(--border) / 0.15),
+    0 12px 0 hsl(var(--border) / 0.15), 0 13px 0 hsl(var(--border) / 0.15),
+    0 14px 0 hsl(var(--border) / 0.15), 0 15px 0 hsl(var(--border) / 0.15);
+}
+
+.layered-title::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-text-stroke: 1px hsl(var(--border));
+  color: transparent;
+  text-shadow: 0 1px 0 hsl(var(--border) / 0.08),
+    0 2px 0 hsl(var(--border) / 0.08), 0 3px 0 hsl(var(--border) / 0.08),
+    0 4px 0 hsl(var(--border) / 0.08), 0 5px 0 hsl(var(--border) / 0.08),
+    0 6px 0 hsl(var(--border) / 0.08), 0 7px 0 hsl(var(--border) / 0.08),
+    0 8px 0 hsl(var(--border) / 0.08), 0 9px 0 hsl(var(--border) / 0.08),
+    0 10px 0 hsl(var(--border) / 0.08);
+}
+
+/* Grid lines that cross entire section */
+.grid-section {
+  position: relative;
+}
+
+.grid-vertical-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: hsl(var(--border) / 0.2);
+  pointer-events: none;
+}
+
+.grid-horizontal-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: hsl(var(--border) / 0.2);
+  pointer-events: none;
+}
