@@ -130,3 +130,173 @@
     scroll-behavior: smooth;
   }
 }
+
+/* Corner cross marks - minimalist style */
+.corner-cross-tl,
+.corner-cross-tr,
+.corner-cross-bl,
+.corner-cross-br {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.corner-cross-tl::before,
+.corner-cross-tl::after,
+.corner-cross-tr::before,
+.corner-cross-tr::after,
+.corner-cross-bl::before,
+.corner-cross-bl::after,
+.corner-cross-br::before,
+.corner-cross-br::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--border));
+}
+
+/* Vertical line */
+.corner-cross-tl::before,
+.corner-cross-tr::before,
+.corner-cross-bl::before,
+.corner-cross-br::before {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+}
+
+/* Horizontal line */
+.corner-cross-tl::after,
+.corner-cross-tr::after,
+.corner-cross-bl::after,
+.corner-cross-br::after {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+}
+
+/* Positioning */
+.corner-cross-tl {
+  top: -1px;
+  left: -1px;
+}
+
+.corner-cross-tr {
+  top: -1px;
+  right: -1px;
+}
+
+.corner-cross-bl {
+  bottom: -1px;
+  left: -1px;
+}
+
+.corner-cross-br {
+  bottom: -1px;
+  right: -1px;
+}
+
+/* About section outline */
+.about-outline::before,
+.about-outline::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: hsl(var(--border));
+  pointer-events: none;
+}
+
+.about-outline::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.about-outline::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* Smaller outlines for secondary boxes */
+.about-outline-sm::before,
+.about-outline-sm::after,
+.corner-mark-top-right-sm,
+.corner-mark-bottom-left-sm {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-color: hsl(var(--border));
+  pointer-events: none;
+}
+
+.about-outline-sm::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.about-outline-sm::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-mark-top-right-sm {
+  top: -1px;
+  right: -1px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-mark-bottom-left-sm {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
+
+/* Dot pattern background */
+.dot-pattern {
+  background-image: radial-gradient(
+    circle,
+    hsl(var(--foreground) / 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  position: relative;
+}
+
+/* Tech Stack and other outlines */
+.corner-mark-top-right,
+.corner-mark-bottom-left {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: hsl(var(--border));
+  pointer-events: none;
+}
+
+.corner-mark-top-right {
+  top: -1px;
+  right: -1px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-mark-bottom-left {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}

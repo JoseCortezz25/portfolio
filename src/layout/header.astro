@@ -2,7 +2,7 @@
 import { Home, User, Briefcase, FolderOpen } from "lucide-react";
 
 const navItems = [
-  { href: "/", icon: Home, label: "Home" },
+  { href: "/#hero", icon: Home, label: "Home" },
   { href: "#about", icon: User, label: "About" },
   { href: "#experience", icon: Briefcase, label: "Experience" },
   { href: "#projects", icon: FolderOpen, label: "Projects" },
@@ -19,15 +19,9 @@ const navItems = [
       {
         navItems.map((item) => (
           <a href={item.href} class="relative group">
-            <div class="p-3 rounded-xl hover:bg-accent/10 transition-all duration-200 hover:scale-110">
-              <item.icon class="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
+            <div class="p-3 rounded-xl hover:bg-accent/80 transition-all duration-200 hover:scale-110">
+              <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </div>
-
-            {/* Tooltip */}
-            {/* <div class="absolute left-full ml-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-background/95 backdrop-blur-sm border border-border/40 rounded-lg text-sm whitespace-nowrap shadow-lg animate-in fade-in slide-in-from-left-2 duration-200">
-              {item.label}
-              <div class="absolute right-full top-1/2 -translate-y-1/2 border-4 border-transparent border-r-background/95" />
-            </div> */}
           </a>
         ))
       }

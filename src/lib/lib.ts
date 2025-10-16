@@ -15,6 +15,15 @@ export interface Project {
   year: string
 }
 
+
+export interface Experience {
+  title: string
+  date: string
+  company: string
+  description: string
+  techStack: string[]
+}
+
 export const projects: Project[] = [
   {
     slug: "ecommerce-platform",
@@ -87,3 +96,28 @@ export const projects: Project[] = [
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug)
 }
+
+
+export const experience: Experience[] = [
+  {
+    title: "Senior Frontend Engineer",
+    date: "2023 — Present",
+    company: "TechCorp Inc.",
+    description: "Leading the development of accessible UI components and design systems. Collaborating with cross-functional teams to implement best practices in web accessibility and performance optimization.",
+    techStack: ["React", "TypeScript", "Next.js", "Storybook"],
+  },
+  {
+    title: "Junior Developer",
+    date: "2020 — 2021",
+    company: "Digital Agency Co.",
+    description: "Developed responsive websites and web applications for various clients. Collaborated with designers to translate mockups into functional interfaces.",
+    techStack: ["JavaScript", "HTML/CSS", "WordPress", "jQuery"],
+  },
+  {
+    title: "Full-Stack Developer",
+    date: "2021 — 2023",
+    company: "StartupXYZ",
+    description: "Built and maintained multiple client-facing web applications. Implemented RESTful APIs and database architectures. Reduced page load times by 40% through optimization techniques.",
+    techStack: ["Node.js", "PostgreSQL", "React", "AWS"],
+  },
+]

@@ -1,0 +1,26 @@
+---
+import { Badge } from "@/components/atoms/badge";
+const { title, date, company, description, techStack } = Astro.props;
+---
+
+<div class="relative pl-8 border-l-2 border-border">
+  <div
+    class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent border-4 border-background"
+  >
+  </div>
+  <div class="space-y-2">
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-between gap-2"
+    >
+      <h3 class="text-xl font-semibold">{title}</h3>
+      <span class="text-sm font-medium">{date}</span>
+    </div>
+    <p class="font-medium">{company}</p>
+    <p class="text-muted-foreground leading-relaxed">
+      {description}
+    </p>
+    <div class="flex flex-wrap gap-2 pt-2">
+      {techStack.map((tech: string) => <Badge variant="default">{tech}</Badge>)}
+    </div>
+  </div>
+</div>
