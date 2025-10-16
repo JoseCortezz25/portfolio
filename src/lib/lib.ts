@@ -32,8 +32,14 @@ export const projects: Project[] = [
       "Genera cuestionarios de forma rápida y sencilla. Elige el nivel de dificultad y el tema del cuestionario.",
     longDescription:
       "Quizzy es una aplicación web que utiliza inteligencia artificial para generar cuestionarios personalizados de manera automática. Los usuarios pueden seleccionar el nivel de dificultad y el tema que desean estudiar, y la IA creará preguntas relevantes y desafiantes. Perfecta para estudiantes, profesores y cualquier persona que busque una forma interactiva de aprender y evaluar conocimientos.",
-    image: "/modern-ecommerce-dashboard.png",
-    images: ["/ecommerce-product-page.png", "/ecommerce-checkout-flow.png"],
+    image: "https://raw.githubusercontent.com/JoseCortezz25/quiz-generator/refs/heads/feat/internationalization/public/screenshot-quizzy.png",
+    images: [
+      "https://raw.githubusercontent.com/JoseCortezz25/quiz-generator/refs/heads/feat/internationalization/public/screenshot-quizzy-mobile-1.png",
+      "https://raw.githubusercontent.com/JoseCortezz25/quiz-generator/refs/heads/feat/internationalization/public/screenshot-quizzy-mobile-2.png",
+      "https://raw.githubusercontent.com/JoseCortezz25/quiz-generator/refs/heads/feat/internationalization/public/screenshot-quizzy-mobile-3.png",
+      "https://raw.githubusercontent.com/JoseCortezz25/quiz-generator/refs/heads/feat/internationalization/public/screenshot-quizzy-mobile-4.png",
+      "https://raw.githubusercontent.com/JoseCortezz25/quiz-generator/refs/heads/feat/internationalization/public/screenshot-quizzy-mobile-5.png",
+    ],
     techStack: ["Next.js", "React", "TypeScript", "Google Gemini Pro", "Tailwind CSS", "Shadcn UI"],
     status: "Active",
     links: {
@@ -49,8 +55,8 @@ export const projects: Project[] = [
       "Crea mocks con ayuda de la IA. Elige el nivel de creatividad y LLM de tu agrado.",
     longDescription:
       "JSON AI es una herramienta innovadora que permite generar datos mock de forma inteligente utilizando modelos de lenguaje grandes (LLM). Los desarrolladores pueden especificar la estructura de datos que necesitan y ajustar el nivel de creatividad, obteniendo instantáneamente datos de prueba realistas y variados. Ideal para testing, desarrollo frontend y prototipado rápido.",
-    image: "/task-management-kanban.png",
-    images: ["/task-board-interface.jpg", "/task-details-modal.jpg"],
+    image: "https://raw.githubusercontent.com/JoseCortezz25/JSON-AI/main/screenshot.jpg",
+    images: [],
     techStack: ["Next.js", "React", "TypeScript", "Langchain", "Google Gemini Pro", "Tailwind CSS"],
     status: "Active",
     links: {
@@ -66,8 +72,8 @@ export const projects: Project[] = [
       "Clon de Notion, una aplicación de notas y gestión de proyectos.",
     longDescription:
       "Idea es un clon funcional de Notion que ofrece una experiencia completa de gestión de notas y proyectos. Incluye editor de texto enriquecido, organización jerárquica de páginas, bases de datos personalizables y colaboración en tiempo real. Desarrollado con las tecnologías más modernas para ofrecer una interfaz fluida y responsive.",
-    image: "/ai-writing-assistant-interface.png",
-    images: ["/ai-content-editor.jpg", "/content-templates-library.png"],
+    image: "https://raw.githubusercontent.com/JoseCortezz25/notion-clone/main/screenshot2.png",
+    images: [],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     status: "Active",
     links: {
@@ -82,8 +88,8 @@ export const projects: Project[] = [
     description: "Generador de expresiones regulares a partir de solicitudes en lenguaje natural. Usa Google Gemini Pro API.",
     longDescription:
       "RegEx Wizard simplifica la creación de expresiones regulares complejas. Los usuarios pueden describir en lenguaje natural lo que necesitan validar o extraer, y la IA genera automáticamente la expresión regular correspondiente. Incluye un editor Monaco integrado para probar y refinar las expresiones generadas, con explicaciones detalladas de cada componente.",
-    image: "/weather-dashboard-interface.png",
-    images: ["/weather-map-view.jpg", "/forecast-charts.jpg"],
+    image: "https://raw.githubusercontent.com/JoseCortezz25/regex-wizard/main/public/screenshot.png",
+    images: [],
     techStack: ["Next.js", "React", "TypeScript", "Google Gemini Pro", "Monaco Editor", "Tailwind CSS"],
     status: "Active",
     links: {

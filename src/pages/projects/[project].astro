@@ -57,11 +57,11 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
             </span>
           </div>
 
-          <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 tracking-tighter leading-none">
+          <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 tracking-tighter leading-none" transition:name={`project-title-${projectData.slug}`}>
             {projectData.title}
           </h1>
 
-          <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+          <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-2xl" transition:name={`project-desc-${projectData.slug}`}>
             {projectData.description}
           </p>
 
@@ -175,7 +175,7 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
         <div class="absolute -top-8 -left-8 w-24 h-24 outline outline-1 outline-border/30 rounded-2xl -z-10 group-hover:scale-110 transition-transform duration-500"></div>
         <div class="absolute -bottom-8 -right-8 w-32 h-32 outline outline-1 outline-border/30 rounded-2xl -z-10 group-hover:scale-110 transition-transform duration-500"></div>
 
-        <div class="relative overflow-hidden rounded-3xl outline outline-1 outline-border/50">
+        <div class="relative overflow-hidden rounded-3xl outline outline-1 outline-border/50" transition:name={`project-image-${projectData.slug}`}>
           <img
             src={projectData.image}
             alt={projectData.title}
