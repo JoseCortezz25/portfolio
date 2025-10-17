@@ -98,6 +98,67 @@ export const projects: Project[] = [
     },
     year: "2024",
   },
+  {
+    slug: "formulate-form-builder",
+    title: "Formulate: Build forms with ease",
+    description: "Aplicación web diseñada para la creación de formularios de manera intuitiva y eficiente mediante drag and drop.",
+    longDescription:
+      "Aplicación web diseñada para la creación de formularios de manera intuitiva y eficiente. Facilita la creación de formularios mediante la función de arrastrar y soltar, y la configuración de validaciones con simples clics, lo que permite a los usuarios diseñar formularios personalizados sin necesidad de conocimientos técnicos avanzados. Además, ofrece la posibilidad de exportar el código del formulario en HTML nativo, utilizando Just Validate, y en React, empleando Shadcn y React Hook Form, brindando flexibilidad y adaptabilidad a diferentes entornos de desarrollo.",
+    image: "https://raw.githubusercontent.com/JoseCortezz25/formulate/main/public/screenshot.png",
+    images: [],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI", "React Hook Form"],
+    status: "Active",
+    links: {
+      github: "https://github.com/JoseCortezz25/formulate",
+      live: "https://formulate-generator.vercel.app",
+    },
+    year: "2024",
+  },
+  {
+    slug: "tokencase-figma-plugin",
+    title: "TokenCase",
+    description: "Plugin de Figma que permite extraer y exportar tokens de color con precisión y flexibilidad.",
+    longDescription:
+      "TokenCase es un plugin de Figma que permite extraer y exportar tokens de color desde Figma con precisión y flexibilidad, optimizando el flujo de trabajo entre diseño y código. El plugin ofrece capacidades avanzadas de exportación que incluyen múltiples formatos de salida (CSS Variables, SCSS, Tailwind Config, JSON), opciones de formato de color (RGB y hexadecimal), y diversas convenciones de nomenclatura. Los usuarios pueden visualizar una vista previa en tiempo real de los tokens extraídos y exportar mediante copia directa al portapapeles o descarga de archivos. La interfaz intuitiva facilita la organización de tokens por contexto, tema o componente, proporcionando una experiencia fluida desde la selección hasta la implementación final.",
+    image: "https://raw.githubusercontent.com/JoseCortezz25/tokencase/master/.screenshot.png",
+    images: [],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Vite", "Figma Plugin API"],
+    status: "Active",
+    links: {
+      github: "https://github.com/JoseCortezz25/tokencase",
+      live: "https://www.figma.com/community/plugin/1544168977475213494/tokencase",
+    },
+    year: "2025",
+  },
+  {
+    slug: "textify-notes-ai-app",
+    title: "Textify Notes: AI-powered note-taking app",
+    description: "Aplicación de toma de notas impulsada por IA que transcribe, resume, corrige y organiza ideas de manera eficiente.",
+    longDescription:
+      "La aplicación de toma de notas, impulsada por inteligencia artificial, facilita el procesamiento para transcribir, resumir, corregir y organizar ideas de manera eficiente. La información se almacena de forma segura en el dispositivo del usuario. Desarrollado con un stack tecnológico moderno, el proyecto integra Next.js junto con TypeScript como framework principal, Vercel AI SDK para el procesamiento de lenguaje natural, localForage para el almacenamiento en el dispositivo. Por otra parte, emplea shadcn/ui, SASS y Tailwind para la creación de la interfaz de usuario.",
+    image: "https://raw.githubusercontent.com/JoseCortezz25/textify-notes-app/main/public/screenshot.png",
+    images: [],
+    techStack: ["Next.js", "React", "TypeScript", "Vercel AI SDK", "Tailwind CSS", "SASS", "Shadcn UI", "localForage"],
+    status: "Active",
+    links: {
+      github: "https://github.com/JoseCortezz25/textify-notes-app",
+      live: "https://textify-notes.vercel.app",
+    },
+    year: "2025",
+  },
+  {
+    slug: "factly-ai-fact-checker",
+    title: "Factly: AI-powered fact checking",
+    description: "Herramienta web impulsada por IA que verifica si una afirmación, hipótesis o supuesto es verdadero o falso.",
+    longDescription:
+      "Prueba de concepto de una herramienta web impulsada por inteligencia artificial que verifica si una afirmación, hipótesis o supuesto es verdadero o falso. Su objetivo es validar el uso de la AI en la detección de desinformación y mejorar el acceso a información confiable mediante procesos rápidos de fact checking. Este proyecto ha sido desarrollado con Next.js como framework principal, integrando bibliotecas de componentes visuales como PromptKit y ShadCN/UI, optimizadas con TailwindCSS para una experiencia de usuario flexible y moderna. Además, hace uso del modelo Gemini mediante el Vercel AI SDK, proporcionando capacidades de inteligencia artificial con herramientas de búsquedas en internet para potenciar su funcionalidad.",
+    image: "https://via.placeholder.com/800x450/1a1a1a/ffffff?text=Factly",
+    images: [],
+    techStack: ["Next.js", "React", "TypeScript", "Vercel AI SDK", "Gemini API", "Tailwind CSS", "Shadcn UI", "PromptKit"],
+    status: "Completed",
+    links: {},
+    year: "2025",
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {

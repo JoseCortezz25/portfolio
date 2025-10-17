@@ -1,6 +1,8 @@
 ---
+import { Button } from "@/components/ui/button";
 import Layout from "@/layout/layout.astro";
 import { projects, getProjectBySlug } from "@/lib/lib";
+import { ArrowUpRightFromSquareIcon } from "lucide-react";
 
 export function getStaticPaths() {
   return projects.map((project) => ({
@@ -48,7 +50,9 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
       </div>
 
       {/* Hero content - Asymmetric layout */}
-      <div class="grid lg:grid-cols-[1.5fr,1fr] gap-12 py-16 md:py-24 items-center">
+      <div
+        class="grid lg:grid-cols-[1.5fr,1fr] gap-12 py-16 md:py-24 items-center"
+      >
         <div>
           <div class="flex items-center gap-3 mb-8">
             <div class="h-px w-12 bg-foreground"></div>
@@ -57,11 +61,17 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
             </span>
           </div>
 
-          <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 tracking-tighter leading-none" transition:name={`project-title-${projectData.slug}`}>
+          <h1
+            class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 tracking-tighter leading-none"
+            transition:name={`project-title-${projectData.slug}`}
+          >
             {projectData.title}
           </h1>
 
-          <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-2xl" transition:name={`project-desc-${projectData.slug}`}>
+          <p
+            class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-2xl"
+            transition:name={`project-desc-${projectData.slug}`}
+          >
             {projectData.description}
           </p>
 
@@ -73,22 +83,11 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
                   href={projectData.links.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background rounded-full font-medium hover:scale-105 transition-transform"
                 >
-                  Ver Proyecto
-                  <svg
-                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
+                  <Button variant="primary" size="xl">
+                    Ver Proyecto
+                    <ArrowUpRightFromSquareIcon className="w-4 h-4" />
+                  </Button>
                 </a>
               )
             }
@@ -98,69 +97,13 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
                   href={projectData.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-8 py-4 outline outline-1 outline-border/50 rounded-full font-medium hover:outline-border transition-all"
                 >
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                  Código
+                  <Button variant="outline" size="xl">
+                    Repositorio
+                  </Button>
                 </a>
               )
             }
-          </div>
-        </div>
-
-        {/* Project Info Card - Floating */}
-        <div class="lg:block hidden">
-          <div class="outline outline-1 outline-border/30 rounded-2xl p-8 backdrop-blur-sm bg-card/50">
-            <div class="space-y-6">
-              <div>
-                <div class="text-xs text-muted-foreground uppercase tracking-wider mb-2">Tecnologías</div>
-                <div class="flex flex-wrap gap-2">
-                  {
-                    projectData.techStack.slice(0, 5).map((tech) => (
-                      <span class="text-sm font-medium">{tech}</span>
-                    ))
-                  }
-                </div>
-              </div>
-
-              {
-                (projectData.links.live || projectData.links.github) && (
-                  <div class="pt-6 border-t border-border/20">
-                    <div class="text-xs text-muted-foreground uppercase tracking-wider mb-3">Enlaces</div>
-                    <div class="space-y-2">
-                      {projectData.links.live && (
-                        <a
-                          href={projectData.links.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="flex items-center gap-2 text-sm hover:text-foreground transition-colors"
-                        >
-                          <span>Sitio en Vivo</span>
-                          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      )}
-                      {projectData.links.github && (
-                        <a
-                          href={projectData.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="flex items-center gap-2 text-sm hover:text-foreground transition-colors"
-                        >
-                          <span>Repositorio</span>
-                          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )
-              }
-            </div>
           </div>
         </div>
       </div>
@@ -172,10 +115,19 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
     <div class="container mx-auto max-w-7xl px-6">
       <div class="relative group">
         {/* Geometric decoration */}
-        <div class="absolute -top-8 -left-8 w-24 h-24 outline outline-1 outline-border/30 rounded-2xl -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-        <div class="absolute -bottom-8 -right-8 w-32 h-32 outline outline-1 outline-border/30 rounded-2xl -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+        <div
+          class="absolute -top-8 -left-8 w-24 h-24 outline outline-border/30 rounded-2xl -z-10 group-hover:scale-110 transition-transform duration-500"
+        >
+        </div>
+        <div
+          class="absolute -bottom-8 -right-8 w-32 h-32 outline outline-border/30 rounded-2xl -z-10 group-hover:scale-110 transition-transform duration-500"
+        >
+        </div>
 
-        <div class="relative overflow-hidden rounded-3xl outline outline-1 outline-border/50" transition:name={`project-image-${projectData.slug}`}>
+        <div
+          class="relative overflow-hidden rounded-3xl outline outline-border/50"
+          transition:name={`project-image-${projectData.slug}`}
+        >
           <img
             src={projectData.image}
             alt={projectData.title}
@@ -191,16 +143,22 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
     <div class="container mx-auto max-w-7xl px-6">
       <div class="grid lg:grid-cols-3 gap-6">
         {/* Large card - Overview */}
-        <div class="lg:col-span-2 outline outline-1 outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border transition-all">
+        <div
+          class="lg:col-span-2 outline outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border transition-all"
+        >
           <div class="h-px w-16 bg-foreground mb-8"></div>
-          <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Descripción General</h2>
+          <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+            Descripción General
+          </h2>
           <p class="text-xl text-muted-foreground leading-relaxed">
             {projectData.longDescription}
           </p>
         </div>
 
         {/* Stats card */}
-        <div class="outline outline-1 outline-border/50 rounded-3xl p-10 hover:outline-border transition-all">
+        <div
+          class="outline outline-border/50 rounded-3xl p-10 hover:outline-border transition-all"
+        >
           <div class="h-px w-16 bg-foreground mb-8"></div>
           <div class="space-y-8">
             <div>
@@ -208,24 +166,39 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
               <div class="text-sm text-muted-foreground">Año</div>
             </div>
             <div>
-              <div class="text-3xl font-bold mb-2">{projectData.status === "Active" ? "Activo" : "Completado"}</div>
+              <div class="text-3xl font-bold mb-2">
+                {projectData.status === "Active" ? "Activo" : "Completado"}
+              </div>
               <div class="text-sm text-muted-foreground">Estado</div>
             </div>
             <div>
-              <div class="text-3xl font-bold mb-2">{projectData.techStack.length}</div>
+              <div class="text-3xl font-bold mb-2">
+                {projectData.techStack.length}
+              </div>
               <div class="text-sm text-muted-foreground">Tecnologías</div>
             </div>
           </div>
         </div>
 
         {/* Tech Stack - Full width */}
-        <div class="lg:col-span-3 outline outline-1 outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border transition-all">
-          <div class="h-px w-16 bg-foreground mb-8"></div>
-          <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Stack Tecnológico</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div
+          class="lg:col-span-3 outline outline-border/50 rounded-3xl hover:outline-border transition-all overflow-hidden"
+        >
+          <div class="grid grid-cols-2">
+            <div class="p-10 col-span-2 sm:col-span-1">
+              <div class="h-px w-16 bg-foreground mb-8"></div>
+              <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+                Stack Tecnológico
+              </h2>
+            </div>
+            <div class="background-pattern col-span-2 sm:col-span-1"></div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
             {
               projectData.techStack.map((tech) => (
-                <div class="outline outline-1 outline-border/50 rounded-2xl p-6 text-center hover:outline-border hover:scale-105 transition-all">
+                <div class="outline outline-border/50 flex flex-col items-center justify-center aspect-square p-6 text-center hover:outline-border hover:bg-gray-100/50 transition-all">
+                  <img src="" alt="" />
                   <div class="font-semibold text-sm md:text-base">{tech}</div>
                 </div>
               ))
@@ -236,13 +209,15 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
         {/* Image Gallery - Masonry style */}
         {
           projectData.images && projectData.images.length > 0 && (
-            <div class="lg:col-span-3 outline outline-1 outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border transition-all">
-              <div class="h-px w-16 bg-foreground mb-8"></div>
-              <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Galería</h2>
+            <div class="lg:col-span-3 outline outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border transition-all">
+              <div class="h-px w-16 bg-foreground mb-8" />
+              <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+                Galería
+              </h2>
 
               <div class="grid md:grid-cols-2 gap-6">
                 {projectData.images.map((image, index) => (
-                  <div class="relative overflow-hidden rounded-2xl outline outline-1 outline-border/50 group">
+                  <div class="relative overflow-hidden rounded-2xl outline outline-border/50 group">
                     <img
                       src={image}
                       alt={`${projectData.title} screenshot ${index + 1}`}
@@ -264,7 +239,7 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
       <section class="py-16 md:py-24">
         <div class="container mx-auto max-w-7xl px-6">
           <div class="mb-16">
-            <div class="h-px w-16 bg-foreground mb-8"></div>
+            <div class="h-px w-16 bg-foreground mb-8" />
             <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
               Más Proyectos
             </h2>
@@ -274,7 +249,7 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
             {otherProjects.map((proj) => (
               <a
                 href={`/projects/${proj.slug}`}
-                class="group relative outline outline-1 outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border hover:scale-[1.02] transition-all duration-300"
+                class="group relative outline outline-border/50 rounded-3xl p-10 md:p-12 hover:outline-border hover:scale-[1.02] transition-all duration-300"
               >
                 <div class="flex items-start justify-between mb-6">
                   <span class="text-xs font-mono uppercase tracking-wider text-muted-foreground">
@@ -305,7 +280,7 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
 
                 <div class="flex flex-wrap gap-3">
                   {proj.techStack.slice(0, 3).map((tech) => (
-                    <span class="text-xs font-mono outline outline-1 outline-border/50 rounded-full px-3 py-1">
+                    <span class="text-xs font-mono outline outline-border/50 rounded-full px-3 py-1">
                       {tech}
                     </span>
                   ))}
@@ -315,11 +290,10 @@ const otherProjects = projects.filter((p) => p.slug !== project).slice(0, 2);
           </div>
 
           <div class="mt-12 text-center">
-            <a
-              href="/#projects"
-              class="inline-flex items-center gap-2 px-8 py-4 outline outline-1 outline-border/50 rounded-full font-medium hover:outline-border hover:scale-105 transition-all"
-            >
-              Ver Todos los Proyectos
+            <a href="/#projects">
+              <Button variant="outline" size="xl">
+                Ver todos los proyectos
+              </Button>
             </a>
           </div>
         </div>

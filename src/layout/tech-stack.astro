@@ -20,18 +20,26 @@ const techStack = [
       <span class="corner-mark-top-right"></span>
       <span class="corner-mark-bottom-left"></span>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-12 gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-start">
         {/* Left Column - Technologies */}
         <div class="grid grid-cols-3 aspect-square">
           {techStack.map((tech) => <TechstackItem key={tech} tech={tech} />)}
         </div>
 
         {/* Right Column - Title */}
-        <div class="flex flex-col justify-center pb-8 px-6 md:py-9">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">Stack Tecnológico</h2>
-          <p class="text-lg text-muted-foreground">
-            Tecnologías con las que trabajo regularmente
-          </p>
+        <div class="grid grid-cols-2 grid-rows-[auto_1fr] w-full h-full">
+          <div
+            class="flex flex-col justify-center py-8 px-6 md:px-10 md:py-9 col-span-2 h-fit row-auto"
+          >
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              Stack Tecnológico
+            </h2>
+            <p class="text-lg text-muted-foreground">
+              Tecnologías con las que trabajo regularmente
+            </p>
+          </div>
+
+          <div class="background-pattern col-span-2 w-full h-full"></div>
         </div>
       </div>
     </div>

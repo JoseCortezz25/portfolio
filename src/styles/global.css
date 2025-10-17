@@ -410,3 +410,10 @@
   background-color: hsl(var(--border) / 0.2);
   pointer-events: none;
 }
+
+.background-pattern {
+  background-color: white;
+  opacity: 1;
+  background-image: radial-gradient(#000000 0.45px, white 0.45px);
+  background-size: 9px 9px;
+}
